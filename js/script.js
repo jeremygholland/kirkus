@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	var horoscope;
 	$('.horoscope').hide();
 	$('.fields').on('submit', function(e){
 		e.preventDefault();
@@ -15,9 +16,13 @@ $(document).ready(function(){
 		}
 		if(month && date){
 		var birthday = (month + '/'+ date +'/'+year);
-		$('.chatContain').append('<div class = "user"> <p> You said that your birthday was ' + birthday + '. Would you like to know your horoscope?</p> </div>');
+
 		$('.birthday-form').hide();
 		$('.horoscope').show();
+			if( ((month == 4) && (date >= 21)) || ((month==5)&&(date<=20))){
+				var horoscope = "Taurus";
+			}
+			$('.chatContain').append('<div class = "user"> <p> You said that your birthday was ' + birthday + '. That means you are a '+ horoscope+'! Would you like to know your horoscope?</p> </div>');
 		}
 
 	})

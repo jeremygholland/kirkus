@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <section class="chatContain">
+    <section id="chatContain">
         <div class="bot">
             <p> Let's try this</p>
         </div>
@@ -25,19 +25,21 @@
             one more?
         </div>
     </section>
-        <div class="birthday-form">
+        <div id="birthday-form">
       <label for="">Enter your birthday</label>
-      <form class="fields">
+      <form id="fields">
         <input type="tel" id="month" maxlength="2" max ="12" placeholder="MM"/ required> /
         <input type="tel" id="day" maxlength="2" max = "31" placeholder="DD"/ required />
         <input type="tel" id="year" maxlength="4" placeholder="YYYY"  required>
         <input type="submit" id ="submit">
       </form>
     </div>
-    <form class = "horoscope">
-    	<input type="text" id = "horoAnswer" maxlength= "3" placeholder "Yes or no" required>
-    	<input type="submit">
-    </form>
+
+
+      <form id ="horoscope">
+    	<input type="text" id = "horoAnswer" maxlength= "3" placeholder "Y/N" required>
+    	<input type="submit" class = "submitHoro">
+      </form>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
     <script src="js/script.js"></script>
 </body>

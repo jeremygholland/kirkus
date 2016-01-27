@@ -2,7 +2,7 @@ $(document).ready(function(){
 	var sign = {
 		taurus:{
 		name: "Taurus",
-		string: ""
+		string: "testing"
 		},
 		gemini: {
 			name:"Gemini"
@@ -32,13 +32,12 @@ $(document).ready(function(){
 			name: "Pisces"
 		}
 	};
-
-	$('.horoscope').hide();
-	$('.fields').on('submit', function(e){
+	document.getElementById('horoscope').style.display = "none";
+	document.getElementById("submit").addEventListener("click", function(e){
 		e.preventDefault();
-		var date = $('#day').val();
-		var month = $('#month').val();
-		var year = $('#year').val();
+		var date = document.getElementById('day').value;
+		var month = document.getElementById('month').value;
+		var year = document.getElementById('year').value;
 		if(date > 31){
 			alert("please enter a correct date number (01-31)");
 			date = false;
@@ -50,8 +49,7 @@ $(document).ready(function(){
 		if(month && date){
 		var birthday = (month + '/'+ date +'/'+year);
 
-		$('.birthday-form').hide();
-		$('.horoscope').show();
+		document.getElementById('horoscope').style.visibility = "visible";
 			if( ((month == 4) && (date >= 21)) || ((month==5)&&(date<=20))){
 				var horoscope = sign.taurus.name;
 			}
@@ -82,9 +80,31 @@ $(document).ready(function(){
 			else{
 				var horoscope = sign.pisces.name;
 			}
-			$('.chatContain').append('<div class = "user"> <p> You said that your birthday was ' + birthday + '. That means you are a '+ horoscope+'! Would you like to know your horoscope?</p> </div>');
+			var x = document.createElement("P");
+			x.className = "bot";
+			var t = document.createTextNode('You said that your birthday was ' + birthday + '. That means you are a '+ horoscope+'! Would you like to know your horoscope?');
+			x.appendChild(t);
+			document.getElementById('chatContain').appendChild(x);
 		}
+		document.getElementById('horoscope').style.display = "block";
+		document.getElementById('birthday-form').style.display = "none";
 
 	})
 
+	$('.submitHoro').on('submit', function(e){
+			e.preventDefault();
+				var answer = document.getElementById('horoAnswer').value;
+				if ((answer != "yes") || (answer != "no")){
+					$(".horoscop").append("<p> Please type yes or no");
+				}
+				else{
+					if(answer == "yes"){
+					if(horoscope = "taurus"){
+
+						$('.chatContain').append("<div class = bot> <p>" +sign.taurus.string + "</p></div>");
+						}
+				}
+				}
+
+			});
 })

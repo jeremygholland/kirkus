@@ -28,12 +28,16 @@
         <div class="birthday-form">
       <label for="">Enter your birthday</label>
       <form class="fields">
-        <input type="tel" id="month" maxlength="2" placeholder="MM"/ required> /
-        <input type="tel" id="day" maxlength="2" placeholder="DD"/ required />
+        <input type="tel" id="month" maxlength="2" max ="12" placeholder="MM"/ required> /
+        <input type="tel" id="day" maxlength="2" max = "31" placeholder="DD"/ required />
         <input type="tel" id="year" maxlength="4" placeholder="YYYY"  required>
         <input type="submit" id ="submit">
       </form>
     </div>
+    <form class = "horoscope">
+    	<input type="text" id = "horoAnswer" maxlength= "3" placeholder "Yes or no" required>
+    	<input type="submit">
+    </form>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
     <script src="js/script.js"></script>
 </body>

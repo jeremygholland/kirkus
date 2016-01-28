@@ -1,12 +1,55 @@
 body{
 	width: 95vw;
 	margin: 0 auto;
+}
+
+.contain{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	}
+.sidebar{
+	width: 28%;
+	height: 100vh;
+	.chatOptions{
+		height: 15%;
+		border: 2px solid black;
+	}
+	.inputBar{
+		height: 5vh;
+		border: 2px solid black;
+	}
+}
+
+.chatWindow{
+	width: 68%;
+	#chatContain{
+		height: 78vh;
+		overflow: scroll;
+		margin-left: -1.9vw;
+	}
+	#input, #horoscope{
+		height: 5vh;
+			width: 100%;
+		input{
+			height: 5vh;
+		}
+	}
+}
+
 	.bot{
-		left: 40%;
+		margin-left: 2vw;
+		margin-top: 2vh;
+		bottom: 0;
 		display: relative;
 		width: 20%;
-		padding: 5px;
+		padding: 15px;
 		background-color: #64b5f6;
+		border-radius: 2em;
+		p{
+			width: 80%;
+			margin: 0 auto;
+		}
 
 	}
 	.user{
@@ -16,7 +59,11 @@ body{
 		background-color: #26a69a;
 		padding: 10px;
 		margin-bottom: 10px;
-	}
+		border-radius: 2em;
+		p{
+			width: 80%;
+			margin: 0 auto;
+		}
 }
 .birthday-form {
 

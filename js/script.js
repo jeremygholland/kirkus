@@ -63,15 +63,23 @@
 		var date = document.getElementById('day').value;
 		var month = document.getElementById('month').value;
 		var year = document.getElementById('year').value;
-		if(date > 31){
+		console.log(month.length)
+		if(date > 31) {
 			alert("please enter a correct date number (01-31)");
 			date = false;
+			document.getElementById('horoscope').style.display = "none";
+			document.getElementById('birthday-form').style.display = "block";
 		}
-		if(month> 12){
+		else if( (month > 12) || (month.length<2) ){
 			month = false;
 			alert("please enter a correct month (01-12)");
+			document.getElementById('horoscope').style.display = "none";
+			document.getElementById('birthday-form').style.display = "block";
 		}
-		if(month && date){
+
+	else{
+		document.getElementById('horoscope').style.display = "block";
+		document.getElementById('birthday-form').style.display = "none";
 		var birthday = (month + '/'+ date +'/'+year);
 
 		//used to post user's birthday in user's chat box
@@ -83,7 +91,6 @@
 
 
 
-		document.getElementById('horoscope').style.visibility = "visible";
 			if( ((month == 4) && (date >= 21)) || ((month==5)&&(date<=20))){
 				var horoscope = sign.taurus.name;
 			}
@@ -120,8 +127,7 @@
 			x.appendChild(t);
 			document.getElementById('chatContain').appendChild(x);
 		}
-		document.getElementById('horoscope').style.display = "block";
-		document.getElementById('birthday-form').style.display = "none";
+
 		console.log(horoscope);
 		document.getElementById("submitHoro").addEventListener("click", function(e){
 				e.preventDefault();
@@ -130,6 +136,7 @@
 					if ((answer == "yes") || (answer == "no")){
 						if(answer == "yes"){
 							approval();
+					document.getElementById('horoAnswer').value = "";
 						if(horoscope == "Taurus"){
 							var x = document.createElement("P");
 							x.className = "bot"

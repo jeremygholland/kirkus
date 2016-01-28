@@ -5,27 +5,38 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Untitled</title>
+    <title>Horoscope</title>
     <link rel="author" href="humans.txt">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <section class="topBar">
+    <div class="leftTop">
+      <input type="text" disabled placeholder = "search">
+    </div>
+    <div class="rightTop">
+      <div id="userName">
+        
+      </div>
+    </div>
+  </section>
+
   <div class="contain">
 
     <section class="sidebar">
         <div class="chatOptions">
-          <p>chatBot</p>
+          <li> <p class = "blink" id = "beginProgram">Horoscope-Bot</p></li>
         </div>
         <div class="chatOptions"></div>
         <div class="chatOptions"></div>
         <div class="chatOptions"></div>
         <div class="chatOptions"></div>
-        <div class="inputBar"> <p></p> fakeUser@jeremyCreates.com</div>
+        <div class="inputBar"> <p> fakeUser@jeremyCreates.com </p></div>
     </section>
   <div class="chatWindow">
     <section id="chatContain">
-        <div class="bot">
+        <div class="bot" id = "botMsg">
             <p> Hey there! I'm Horoscope-Bot! What's your birthday??? </p>
         </div>
 
@@ -44,6 +55,10 @@
       <form id ="horoscope">
     	<input type="text" id = "horoAnswer" maxlength= "3" placeholder "Y/N" required>
     	<input type="submit" id = "submitHoro">
+      </form>
+
+      <form action="" id="fakeForm">
+        <input type="text"  class = "inputFake" placeholder = "jeremyChat by Jeremy" disabled>
       </form>
       </section>
     </div>
